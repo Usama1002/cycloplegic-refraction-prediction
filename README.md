@@ -107,15 +107,6 @@ Generates all publication figures (demographics, Bland-Altman plots, scatter plo
 | S06 | ER Pre+Post | SPH, CYL, AX (both) + demographics | 11 |
 | S07–S12 | Same as S01–S06 + IOL Master biometry (9 features) | 17–20 |
 
-## Citation
-
-```bibtex
-@article{cycloplegic2026,
-  title={Machine Learning-Based Prediction of Cycloplegic Refraction Using the Eyerobo Vision Screener Versus Auto-Refractor in Pediatric Myopia},
-  year={2026}
-}
-```
-
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
