@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pth
+*.pt
+*.ckpt
+*.pkl
+.env
+*.egg-info/
+dist/
+build/
+.DS_Store
+*:Zone.Identifier
+logs/
+wandb/
+media/
+qa_frames/
