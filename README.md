@@ -1,6 +1,6 @@
 # Cycloplegic Refraction Prediction: Eyerobo VS vs Auto-Refractor
 
-Predicting cycloplegic refraction from non-cycloplegic measurements using machine learning in pediatric myopia. This repository provides the dataset (1,216 eyes from 609 patients, ages 6–19), experiment code, and figure generation scripts for reproducing the results reported in our paper.
+Predicting cycloplegic refraction from non-cycloplegic measurements using machine learning in pediatric myopia. This repository provides the dataset (1,129 eyes from 574 patients, ages 6–18), experiment code, and figure generation scripts for reproducing the results reported in our paper.
 
 The study compares the Eyerobo Vision Screener (a portable handheld photorefractor) against a conventional auto-refractor (AR-1, Nidek, Japan) across 12 feature scenarios, predicting cycloplegic spherical equivalent (SE) and power vector components (J0, J45) using TabPFN and 7 other ML models.
 
@@ -10,12 +10,12 @@ The study compares the Eyerobo Vision Screener (a portable handheld photorefract
 
 | Configuration | MAE (D) | Within ±0.50 D |
 |--------------|---------|----------------|
-| Auto-refractor Pre (TabPFN) | 0.497 | 76.2% |
-| Eyerobo Pre (TabPFN) | 0.786 | 59.6% |
-| Eyerobo + IOL Pre (TabPFN) | 0.616 | 62.7% |
-| Auto-refractor Post (TabPFN) | 0.220 | 95.4% |
+| Auto-refractor Pre (TabPFN) | 0.295 | 87.4% |
+| Eyerobo Pre (TabPFN) | 0.657 | 61.6% |
+| Eyerobo + IOL Pre (TabPFN) | 0.425 | 72.0% |
+| Auto-refractor Post (TabPFN) | 0.203 | 96.0% |
 
-TabPFN achieved the lowest MAE on all 12 scenarios. IOL Master biometry reduced the Eyerobo–auto-refractor gap by 59%. For mild myopia screening, the Eyerobo achieved MAE = 0.383 D (77.7% within ±0.50 D).
+TabPFN achieved the lowest MAE on all Eyerobo scenarios and was competitive with Ridge on auto-refractor scenarios. IOL Master biometry reduced the Eyerobo–auto-refractor gap by 64%. For mild myopia screening, the Eyerobo achieved MAE = 0.398 D (75.6% within ±0.50 D).
 
 ## Requirements
 
@@ -30,7 +30,7 @@ pip install tabpfn
 
 ## Dataset
 
-The dataset is in `data/dataset.csv` — 1,216 eyes from 609 pediatric patients (ages 6–19). All patient identifiers have been anonymized.
+The dataset is in `data/dataset.csv` — 1,129 eyes from 574 pediatric patients (ages 6–18). All patient identifiers have been anonymized. Eyes with placeholder cycloplegic SE values (exactly 0.00 D) were excluded during data cleaning.
 
 **Columns:**
 - `patient_id` — anonymous patient identifier (P0001, P0002, ...)
@@ -45,7 +45,7 @@ The dataset is in `data/dataset.csv` — 1,216 eyes from 609 pediatric patients 
 
 ```
 ├── data/
-│   └── dataset.csv              # Anonymized dataset (1,216 eyes)
+│   └── dataset.csv              # Anonymized dataset (1,129 eyes)
 ├── experiments/code/
 │   ├── prepare.py               # Data loading, feature groups, metrics
 │   ├── clean_and_analyze_data.py # Data cleaning and descriptive statistics
